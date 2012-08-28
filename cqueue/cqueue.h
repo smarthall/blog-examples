@@ -20,12 +20,13 @@ struct cqueue_node {
 struct cqueue_list {
   struct cqueue_node *head;
   struct cqueue_node *tail;
+  unsigned int size;
 };
 
 /* Methods */
 struct cqueue_list * cqueue_new();
 void cqueue_push(struct cqueue_list *list, void *data);
 void *cqueue_pop(struct cqueue_list *list);
-void cqueue_count(struct cqueue_list *list);
+unsigned int cqueue_count(struct cqueue_list *list);
 void cqueue_free(struct cqueue_list *list);
 
